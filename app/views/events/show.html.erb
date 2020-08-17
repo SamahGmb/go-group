@@ -1,0 +1,17 @@
+<h1><%= @event.title %></h1>
+
+<% if @event.start_date == @event.end_date %>
+   <p>Le <%= @event.start_date %></p>
+   <% else %>
+   <p>Du <%= @event.start_date %> au <%= @event.end_date %></p>
+<% end %>
+
+<p><%= @event.location %></p>
+
+<p>Organisé par <%= @event.user.username %></p>
+
+<div class="details">
+  <h2>Description de l'événement</h2>
+  <p><%= @event.details %></p>
+</div>
+
