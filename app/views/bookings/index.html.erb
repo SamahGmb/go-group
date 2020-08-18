@@ -1,19 +1,22 @@
 
+<div class="wrapper">
 <h1><%="Vos événements:"%></h1>
-
-
-<div class="container">
-  <%  @bookings.each do |booking| %>
-  <%= booking.event.title %>
-  <%= booking.event.start_date %>
-  <%= booking.event.end_date %>
-  <%= booking.event.location%>
-
-  <%= link_to "Voir l'événement", event_path(booking.event) %>
-  <br>
-<% end %>
+<div class="cards">
+    <%  @bookings.each do |booking| %>
+    <div class="card">
+      <div class="card-img" >
+        <%= image_tag "yoga-paddle.jpg", height: 200 %>
+      </div>
+      <div class="card-info">
+        <h5 class="card-title"><%= link_to booking.event.title, event_path(booking.event) %></h5>
+        <p class="card-location"><%= booking.event.location %></p>
+        <p class="card-date"><%= booking.event.start_date %> - <%= booking.event.end_date %></p>
+      </div>
+    </div>
+    <% end %>
+    </div>
+    <%= link_to "Revenir à Go-Group", root_path, class: "btn btn-gradient" %>
 </div>
-  <%= link_to "Revenir à Go-Group", root_path %>
 
 
 
