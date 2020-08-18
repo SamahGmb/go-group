@@ -1,5 +1,16 @@
-<% @events.each do |event| %>
-  <%= event.title %>
-  <%= event.start_date %>
-  <%= event.end_date %>
-<% end %>
+<div class="container mt-5 ">
+  <div class="cards">
+    <% @events.each do |event| %>
+      <div class="card-category">
+          <%= event.title %>
+          <%= event.location %>
+          <%= event.start_date %> - <%= event.end_date %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center mt-5">
+  <%= link_to "Add an Event", "#", class: "btn btn-gradient" %>
+</div>
+
