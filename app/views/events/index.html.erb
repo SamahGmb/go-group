@@ -1,4 +1,6 @@
-<div class="container mt-5 ">
+<!-- Version 1 -->
+
+<!-- <div class="container mt-5 ">
   <div class="cards">
     <% @events.each do |event| %>
       <div class="card-category">
@@ -12,5 +14,41 @@
 
 <div class="row d-flex justify-content-center mt-5">
   <%= link_to "Add an Event", "#", class: "btn btn-gradient" %>
+</div> -->
+
+
+<!-- Version 2 -->
+
+<!-- <div class="wrapper">
+  <div class="cards" >
+    <% @events.each do |event| %>
+      <div class="card" >
+        <div class="card-img" > <%= image_tag "yoga-paddle.jpg", alt: "alttext" %> </div>
+        <div class="card-body">
+          <h3 class="card-title"> <%= event.title %> </h3>
+          <p class="card-location"> <%= event.location %> </p>
+          <p class="card-date"> <%= event.start_date %> - <%= event.end_date %> </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div> -->
+
+<!-- Template -->
+<div class="wrapper">
+  <div class="cards">
+    <% @events.each do |event| %>
+      <div class="card">
+        <div class="card-img" >
+          <%= image_tag "yoga-paddle.jpg", height: 200 %>
+        </div>
+        <div class="card-info">
+          <h5 class="card-title"><%= event.title %></h5>
+          <p class="card-location"><%= event.location %></p>
+          <p class="card-date"><%= event.start_date %> - <%= event.end_date %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
