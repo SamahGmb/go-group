@@ -1,0 +1,19 @@
+
+<h1><%="Vos événements:"%></h1>
+
+
+<div class="container">
+  <%  @bookings.each do |booking| %>
+  <%= booking.event.title %>
+  <%= booking.event.start_date %>
+  <%= booking.event.end_date %>
+  <%= booking.event.location%>
+
+  <%= link_to "Voir l'événement", event_path(booking.event) %>
+  <br>
+<% end %>
+</div>
+  <%= link_to "Revenir à Go-Group", root_path %>
+
+
+
