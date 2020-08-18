@@ -43,7 +43,7 @@
           <%= image_tag "yoga-paddle.jpg", height: 200 %>
         </div>
         <div class="card-info">
-          <h5 class="card-title"><%= event.title %></h5>
+          <h5 class="card-title"><%= link_to event.title, event_path(event) %></h5>
           <p class="card-location"><%= event.location %></p>
           <p class="card-date"><%= event.start_date %> - <%= event.end_date %></p>
         </div>
@@ -51,4 +51,6 @@
     <% end %>
   </div>
 </div>
+
+
 
