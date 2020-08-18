@@ -17,8 +17,9 @@
    </div>  
 </div>
 
-<div class="global">
-  <div class="wrapper">
+<div class="wrapper">
+  <div class="global">
+
     <div class="main">
       <%= cl_image_tag @event.photo.key, height: 400, width: 600, crop: :fill %>
       <div class="details">
@@ -28,27 +29,33 @@
     </div>
 
     <div class="side">
-      <span>
-        <i class="far fa-clock"></i>
-        <% if @event.start_date == @event.end_date %>
-          <p>Le <%= @event.start_date %></p>
-        <% else %>
-          <p>Du <%= @event.start_date %> au <%= @event.end_date %></p>
+      <div class="side-text">
+      <span class="side-items">
+          <i class="far fa-clock"></i>
+          <p>
+            <% if @event.start_date == @event.end_date %>
+              Le <%= @event.start_date %>
+            <% else %>
+              Du <%= @event.start_date %> au <%= @event.end_date %>
+            <% end %>
+          </p>
+        </span>
+        <span class="side-items">
+          <i class="fas fa-map-marker-alt"></i>
+          <p><%= @event.location %></p>
+        </span>
+      </div>
+      <img src="https://images.unsplash.com/photo-1585129891066-83969119de8c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=632&q=80" alt="">
+    </div>
+
+    <div class="btn-show">
+      <% if user_signed_in? %>
+        <%= simple_form_for [ @event, @booking ] do |f| %>
+          <%= f.submit "Participer !" %>
         <% end %>
-      </span>
-      <span>
-        <i class="fas fa-map-marker-alt"></i>
-        <p><%= @event.location %></p>
-      </span>
-      <img src="https://unsplash.com/photos/kZiiOgGeZ48" alt="">
+      <% else %>
+        <%= link_to "Log in ", new_user_session_path %>
+      <% end %>
     </div>
   </div>
-
-  <% if user_signed_in? %>
-    <%= simple_form_for [ @event, @booking ] do |f| %>
-      <%= f.submit "Participer !" %>
-    <% end %>
-  <% else %>
-    <%= link_to "Log in ", new_user_session_path %>
-  <% end %>
 </div>

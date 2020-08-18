@@ -15,10 +15,12 @@
 }
 
 .global {
-  background-color: rgb(246, 247, 248);
   margin: 40px 0;
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
 }
 
-.details {
-
+.side {
+  background-color: white;
+  border-radius: 15px;
 }
