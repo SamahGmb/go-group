@@ -15,7 +15,7 @@
   <div class="global">
 
     <div class="main">
-      <img src="https://unsplash.com/photos/Yui5vfKHuzs" alt="">
+      <%= cl_image_tag @event.photo.key, height: 400, width: 700, crop: :fit %>
       <div class="details">
         <h2>Détails</h2>
         <p><%= @event.details %></p>
