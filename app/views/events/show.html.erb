@@ -1,21 +1,26 @@
-<div class="wrapper">
+<div class="head-summary">
+  <div class="wrapper">
+    <div class="date">
+      <% if @event.start_date == @event.end_date %>
+        <p>Le <%= @event.start_date %></p>
+      <% else %>
+        <p>Du <%= @event.start_date %> au <%= @event.end_date %></p>
+      <% end %>
+    </div>
 
-  <div class="head-summary">
-    <% if @event.start_date == @event.end_date %>
-      <p>Le <%= @event.start_date %></p>
-    <% else %>
-      <p>Du <%= @event.start_date %> au <%= @event.end_date %></p>
-     <% end %>
+    <h1><%= @event.title %></h1>
+    
+    <span class="organizer">
+      <%= cl_image_tag @event.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face %>
+      <p>Organisé par <br> <%= @event.user.username %></p>
+    </span>
+   </div>  
+</div>
 
-     <h1><%= @event.title %></h1>
-
-     <p>Organisé par <%= @event.user.username %></p>
-  </div>
-
-  <div class="global">
-
+<div class="global">
+  <div class="wrapper">
     <div class="main">
-      <%= cl_image_tag @event.photo.key, height: 400, width: 700, crop: :fit %>
+      <%= cl_image_tag @event.photo.key, height: 400, width: 600, crop: :fill %>
       <div class="details">
         <h2>Détails</h2>
         <p><%= @event.details %></p>
@@ -37,13 +42,13 @@
       </span>
       <img src="https://unsplash.com/photos/kZiiOgGeZ48" alt="">
     </div>
-
-    <% if user_signed_in? %>
-      <%= simple_form_for [ @event, @booking ] do |f| %>
-        <%= f.submit "Participer !" %>
-      <% end %>
-    <% else %>
-      <%= link_to "Log in ", new_user_session_path %>
-    <% end %>
   </div>
+
+  <% if user_signed_in? %>
+    <%= simple_form_for [ @event, @booking ] do |f| %>
+      <%= f.submit "Participer !" %>
+    <% end %>
+  <% else %>
+    <%= link_to "Log in ", new_user_session_path %>
+  <% end %>
 </div>
