@@ -48,7 +48,7 @@
       <img src="https://images.unsplash.com/photo-1585129891066-83969119de8c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=632&q=80" alt="">
     </div>
 
-    <div class="btn-gradient">
+    <div class="btn-show">
       <% if user_signed_in? %>
         <%= simple_form_for [ @event, @booking ] do |f| %>
           <%= f.submit "Participer !" %>
