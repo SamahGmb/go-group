@@ -1,24 +1,49 @@
-<h1><%= @event.title %></h1>
+<div class="wrapper">
 
-<% if @event.start_date == @event.end_date %>
-   <p>Le <%= @event.start_date %></p>
-   <% else %>
-   <p>Du <%= @event.start_date %> au <%= @event.end_date %></p>
-<% end %>
+  <div class="head-summary">
+    <% if @event.start_date == @event.end_date %>
+      <p>Le <%= @event.start_date %></p>
+    <% else %>
+      <p>Du <%= @event.start_date %> au <%= @event.end_date %></p>
+     <% end %>
 
-<p><%= @event.location %></p>
+     <h1><%= @event.title %></h1>
 
-<p>Organisé par <%= @event.user.username %></p>
+     <p>Organisé par <%= @event.user.username %></p>
+  </div>
 
-<div class="details">
-  <h2>Description de l'événement</h2>
-  <p><%= @event.details %></p>
+  <div class="global">
+
+    <div class="main">
+      <img src="https://unsplash.com/photos/Yui5vfKHuzs" alt="">
+      <div class="details">
+        <h2>Détails</h2>
+        <p><%= @event.details %></p>
+      </div>
+    </div>
+
+    <div class="side">
+      <span>
+        <i class="far fa-clock"></i>
+        <% if @event.start_date == @event.end_date %>
+          <p>Le <%= @event.start_date %></p>
+        <% else %>
+          <p>Du <%= @event.start_date %> au <%= @event.end_date %></p>
+        <% end %>
+      </span>
+      <span>
+        <i class="fas fa-map-marker-alt"></i>
+        <p><%= @event.location %></p>
+      </span>
+      <img src="https://unsplash.com/photos/kZiiOgGeZ48" alt="">
+    </div>
+
+    <% if user_signed_in? %>
+      <%= simple_form_for [ @event, @booking ] do |f| %>
+        <%= f.submit "Participer !" %>
+      <% end %>
+    <% else %>
+      <%= link_to "Log in ", new_user_session_path %>
+    <% end %>
+  </div>
 </div>
-
-<% if user_signed_in? %>
-  <%= simple_form_for [ @event, @booking ] do |f| %>
-    <%= f.submit "Participer !" %>
-  <% end %>
-<% else %>
-  <%= link_to "Log in ", new_user_session_path %>
-<% end %>
