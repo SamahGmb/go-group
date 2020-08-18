@@ -7,6 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+puts "clean DB"
+Booking.destroy_all
+Event.destroy_all
+User.destroy_all
+
+
+puts "create Events"
 Event.create!(
   title: "Sortie pêche",
   start_date: Date.new(2020,8,20),
@@ -65,3 +72,4 @@ Event.create!(
   user_id: 1
 )
 
+puts "Seed ok"
