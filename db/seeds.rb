@@ -96,7 +96,8 @@ event6 = Event.create!(
   title: "Réunion de jeunes mamans",
   start_date: Date.new(2020,9,1),
   end_date: Date.new(2020,9,1),
-  details: "échangeons nos petites astuces pour des bambins épanouis" ,
+  details: "échangeons nos petites astuces pour des bambins épanouis.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." ,
   location: "Au Salon de thé Juliena",
   user_id: user1.id
 )
