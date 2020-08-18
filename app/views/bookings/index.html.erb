@@ -5,7 +5,7 @@
     <%  @bookings.each do |booking| %>
     <div class="card">
       <div class="card-img" >
-        <%= image_tag "yoga-paddle.jpg", height: 200 %>
+        <%= cl_image_tag booking.event.photo.key, height: 200, width: 300%>
       </div>
       <div class="card-info">
         <h5 class="card-title"><%= link_to booking.event.title, event_path(booking.event) %></h5>
