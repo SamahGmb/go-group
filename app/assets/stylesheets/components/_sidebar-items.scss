@@ -1,0 +1,17 @@
+.side-text {
+  margin: 20px;
+}
+
+.side-items {
+  display: flex;
+  padding-bottom: 10px;;
+  i {
+    color: rgb(145, 142, 142);
+    font-size: 24px;
+    width: 30px;
+  }
+  p {
+    margin-bottom: 0;
+    margin-left: 10px;
+  }
+}
