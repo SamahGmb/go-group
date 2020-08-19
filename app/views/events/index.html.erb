@@ -3,37 +3,48 @@
     <h1>Go Group</h1>
     <p>Bougez, Rencontrez</p>
     <div>
-      <label for="search"></label>
-      <input type="search" id="search" name="q" aria-label="Search through site content" placeholder="Trouvez votre prochain" >
-      <button>Search</button>
+      <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
+        <%= f.input :title, label: false, placeholder: 'Trouver votre prochain événement' %>
+        <%= f.submit "Rechercher", class: "btn-gradient" %>
+      <% end %>
     </div>
   </div>
 </div>
 
-
-
 <div class="wrapper">
+  <h2 class="text-center">Trouvez votre activité!</h2>
+  <div class="cards-wrapper">
 
-  <div class="cards">
     <% @events.each do |event| %>
       <div class="card">
-        <div class="card-img" >
-          <%= cl_image_tag event.photo.key, height: 200 , width: 300 %>
-        </div>
-        <div class="card-info">
-          <h5 class="card-title"><%= link_to event.title, event_path(event) %></h5>
-          <p class="card-location"><%= event.location %></p>
-          <p class="card-date"><%= event.start_date %> - <%= event.end_date %></p>
-        </div>
+        <%= link_to event_path(event) do %>
+          <div class="card-img" >
+            <%= cl_image_tag event.photo.key, height: 200 , width: 300 %>
+          </div>
+          <div class="card-info">
+            <div class="date">
+              <% if event.start_date == event.end_date %>
+                <p>Le <%= event.start_date %></p>
+              <% else %>
+                <p>Du <%= event.start_date %> au <%= event.end_date %></p>
+              <% end %>
+            </div>
+            <h3 class="card-title no-link-deco"><%= event.title %></h3>
+        <% end %>
+        <p class="card-location"><%= event.location %></p>
+        <span class="organizer">
+          <%= cl_image_tag event.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+          <p>Organisé par <br> <%= event.user.username %></p>
+        </span>
+      </div>         
       </div>
     <% end %>
   </div>
 
-<div class="row d-flex justify-content-center mt-5 mb-5">
-  <%= link_to "Add an Event", "#", class: "btn btn-gradient" %>
-</div>
+  <div class="row d-flex justify-content-center mt-5 mb-5">
+    <%= link_to "Add an Event", "#", class: "btn btn-gradient" %>
+  </div>
 
 </div>
-
 
 

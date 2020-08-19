@@ -37,7 +37,14 @@ event1 = Event.create!(
   title: "Sortie pêche",
   start_date: Date.new(2020,8,20),
   end_date: Date.new(2020,8,20),
-  details: "Venez avec nous pécher au loch ness!",
+  details: "Embarquez avec Leucate Evasion Marine à bord de l’Azur, Cap au nord avec le Capitaine “Baptiste”, 
+  vers la plage sauvage des Coussoules et La Franqui ! De Port-Leucate jusqu’à La Franqui, 4ème plus belle plage de France. 
+  Embarquez à bord de notre vedette rapide ” la Catalane ” avec seulement 12 personnes à bord ! Partez à la rencontre des grands
+   mammifères marins de Méditerranée. Ou préférez découvrir notre apéro fait d’huîtres, charcuterie et vin du Pays. 
+   Offrez-vous des moments de convivialité et de détente en mer et au coucher de soleil ! Leucate Evasion Marine vous propose des 
+   apéros en mer sur un bateau avec 80 pers, du live, des Dj’s, des tapas, du vin et de la bonne humeur. Optez pour une sardinade 
+   et baignade dans l’Anse du Paradis. Ou préférez un balade au soleil couchant sur les Corbières. Selon la saison, nous vous proposons
+  également d’admirer le feux d’artifice depuis la mer : une expérience unique.",
   location: "40460 Sanguinet",
   user_id: user1.id
 )
@@ -48,7 +55,13 @@ event2 = Event.create!(
   title: "Jouer au badminton",
   start_date: Date.new(2020,8,22),
   end_date: Date.new(2020,8,22),
-  details: "Vous savez tenir une raquette? Rejoignez nous à la salle Jane Fonda pour des parties endiablées",
+  details: "Le volant est un projectile aux propriétés aérodynamiques uniques qui lui donnent une trajectoire très différente des balles utilisées dans la plupart des sports de raquette. En particulier, les plumes créent une traînée bien plus importante, causant une décélération plus rapide. Le vent ayant beaucoup d'influence sur cette trajectoire, car la masse d'un volant est généralement d'environ 5 grammes, le badminton est toujours pratiqué en intérieur.
+
+  Depuis 1992, le badminton est un sport olympique qui se décline en 5 disciplines : simple hommes, simple dames, double hommes, double dames et double mixte.
+  
+  À haut niveau, il nécessite une excellente condition physique ainsi que de très bonnes qualités techniques et tactiques.
+  
+  C'est le sport de raquette le plus rapide du monde1, il est fréquent de voir une douzaine d'échanges en double en moins de 10 secondes. Le record de vitesse pour un volant en compétition est détenu depuis le 11 janvier 2017 par Mads Pieler Kolding, joueur danois de double hommes, qui a frappé le volant à la vitesse de 426 km/h2. Le Malaisien Tan Boon Heong, également joueur de double hommes, a, pour sa part, propulsé un volant à 493 km/h en sortie de raquette en conditions optimales, établissant ainsi le record Guinness actuel, battant ainsi l'ancien record de 421 km/h qu'il avait également établi3. ",
   location: "36 Rue Élie Gintrac, 33000 Bordeaux",
   user_id: user1.id
 )
@@ -59,7 +72,8 @@ event3 = Event.create!(
   title: "Atelier cuisine vegan-friendly",
   start_date: Date.new(2020,8,24),
   end_date: Date.new(2020,8,24),
-  details: "Découvrez les joies de la cuisine! Au menu: larves, orties et cloportes" ,
+  details: "Que vous soyez débutant ou passionné de cuisine, une bande de copines désirant faire une activité originale, maman à la recherche d’une occupation ludique pour ses enfants …ou tout simplement quelqu’un de motivé pour changer ses habitudes alimentaires, ces cours de cuisine à domicile s’adressent à vous.
+  Cette formule de cours à domicile vous permets d’organiser en toute tranquillité et décontraction chez vous, un atelier de cuisine sur mesure, selon vos désirs et vos besoins. L’assurance de passer un bon moment de partage, de rire et de convivialité en famille ou entre amis, puis de déguster ensemble vos propres réalisations tout en restant dans le cadre intimiste de votre maison." ,
   location: "86 Rue Leyteire 33000 Bordeaux",
   user_id: user1.id
 )
@@ -72,7 +86,7 @@ event4 = Event.create!(
   start_date: Date.new(2020,8,25),
   end_date: Date.new(2020,8,26),
   details: "Nous sommes une bande de joyeux lurons qui souhaite passer deux nuits à la belle étoile
-dans un endroit tenu secret jusqu'à la date du RDV" ,
+dans un endroit tenu secret jusqu'à la date du RDV. Le camping sauvage est une forme de camping pratiqué en pleine nature, dans un lieu qui n'est pas (ou peu) aménagé pour cette activité. Suivant les législations, il peut être interdit, autorisé, ou limité au bivouac (camping sauvage d'une nuit, du coucher au lever du soleil)." ,
   location: "Place de la Victoire 33000 Bordeaux",
   user_id: user1.id
 )
