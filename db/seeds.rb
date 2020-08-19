@@ -87,7 +87,7 @@ event4 = Event.create!(
   end_date: Date.new(2020,8,26),
   details: "Nous sommes une bande de joyeux lurons qui souhaite passer deux nuits à la belle étoile
 dans un endroit tenu secret jusqu'à la date du RDV. Le camping sauvage est une forme de camping pratiqué en pleine nature, dans un lieu qui n'est pas (ou peu) aménagé pour cette activité. Suivant les législations, il peut être interdit, autorisé, ou limité au bivouac (camping sauvage d'une nuit, du coucher au lever du soleil)." ,
-  location: "Place de la Victoire33000 Bordeaux",
+  location: "Place de la Victoire 33000 Bordeaux",
   user_id: user1.id
 )
 file4 = URI.open('https://images.unsplash.com/photo-1532339142463-fd0a8979791a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')
