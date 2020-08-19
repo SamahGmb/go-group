@@ -3,14 +3,13 @@
     <h1>Go Group</h1>
     <p>Bougez, Rencontrez</p>
     <div>
-      <label for="search"></label>
-      <input type="search" id="search" name="q" aria-label="Search through site content" placeholder="Trouvez votre prochain" >
-      <button>Search</button>
+      <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
+        <%= f.input :title, label: false, placeholder: 'Trouver votre prochain événement' %>
+        <%= f.submit "Rechercher", class: "btn-gradient" %>
+      <% end %>
     </div>
   </div>
 </div>
-
-
 
 <div class="wrapper">
 
@@ -34,6 +33,5 @@
 </div>
 
 </div>
-
 
 
