@@ -1,21 +1,37 @@
 
 <div class="wrapper">
-<h1><%="Vos événements:"%></h1>
-<div class="cards">
-    <%  @bookings.each do |booking| %>
-    <div class="card">
-      <div class="card-img" >
-        <%= cl_image_tag booking.event.photo.key, height: 200, width: 300%>
+
+  <h1 class="text-center m-3"><%="Vos événements"%></h1>
+
+  <div class="cards-wrapper">
+    <% @bookings.each do |booking| %>
+      <div class="card">
+      <%= link_to event_path(booking.event) do %>
+        <div class="card-img" >
+          <%= cl_image_tag booking.event.photo.key, height: 200, width: 300%>
+        </div>
+        <div class="card-info">
+          <div class="date">
+            <% if booking.event.start_date == booking.event.end_date %>
+              <p>Le <%= booking.event.start_date %></p>
+            <% else %>
+              <p>Du <%= booking.event.start_date %> au <%= booking.event.end_date %></p>
+            <% end %>
+          </div>
+          <h3 class="card-title no-link-deco"><%= booking.event.title %></h3>
+          <% end %>
+          <p class="card-location"><%= booking.event.location %></p>
+          <span class="organizer">
+            <%= cl_image_tag booking.event.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+            <p>Organisé par <br> <%= booking.event.user.username %></p>
+          </span>
+        </div>
       </div>
-      <div class="card-info">
-        <h5 class="card-title"><%= link_to booking.event.title, event_path(booking.event) %></h5>
-        <p class="card-location"><%= booking.event.location %></p>
-        <p class="card-date"><%= booking.event.start_date %> - <%= booking.event.end_date %></p>
-      </div>
-    </div>
     <% end %>
+  </div>
+      <div class="simple-link">
+      <%= link_to "< Retour à Go-Group", root_path %>
     </div>
-    <%= link_to "Revenir à Go-Group", root_path, class: "btn btn-gradient" %>
 </div>
 
 
