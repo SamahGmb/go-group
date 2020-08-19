@@ -12,17 +12,27 @@
 </div>
 
 <div class="wrapper">
-
-  <div class="cards">
+  <h2 class="text-center">Trouvez votre activité!</h2>
+  <div class="cards-wrapper">
     <% @events.each do |event| %>
       <div class="card">
         <div class="card-img" >
           <%= cl_image_tag event.photo.key, height: 200 , width: 300 %>
         </div>
         <div class="card-info">
-          <h5 class="card-title"><%= link_to event.title, event_path(event) %></h5>
+          <div class="date">
+            <% if event.start_date == event.end_date %>
+              <p>Le <%= event.start_date %></p>
+            <% else %>
+              <p>Du <%= event.start_date %> au <%= event.end_date %></p>
+            <% end %>
+          </div>
+          <h3 class="card-title"><%= link_to event.title, event_path(event) %></h3>
           <p class="card-location"><%= event.location %></p>
-          <p class="card-date"><%= event.start_date %> - <%= event.end_date %></p>
+          <span class="organizer">
+            <%= cl_image_tag event.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+            <p>Organisé par <br> <%= event.user.username %></p>
+          </span>
         </div>
       </div>
     <% end %>
