@@ -2,12 +2,12 @@
   background-size: cover;
   background-position: center;
   width: 300px;
-  height: 450px;
   border-radius: 10px;
   border: 0px solid white;
-//   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
   // align-items: left;
   // justify-content: center;
   // padding: 10px 5px;
@@ -17,23 +17,29 @@
 //   text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
-.card-img {
+.card-img img {
   border-radius: 10px;
-  width: 350px;
+  width: 300px;
 }
 
 .card-info {
+  padding: 5px;
   margin: 15px 0;
+  .date {
+    p {
+      margin: 0;
+    }   
+  }
 }
 
 .card-title {
-  font-size: 24px;
+  margin: 5px 0;
+    font-size: 20px;
 }
 
 .card-location {
-  font-size: 16px;
-}
-
-.card-date {
-  font-size: 16px;
+  p {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
 }
