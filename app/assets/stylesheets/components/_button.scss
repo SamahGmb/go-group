@@ -12,6 +12,8 @@
 }
 
 .btn-gradient:hover {
+  color: white;
   background-color: $hover-btn-color;
   transition: background-color 0.2s ease;
+  text-decoration: none;
 }
