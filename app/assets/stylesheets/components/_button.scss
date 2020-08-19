@@ -4,12 +4,14 @@
   padding: 8px 40px;
   border-radius: 4px;
   font-weight: bold;
-  background: linear-gradient($btn-color, $btn-color);
-  transition: background 0.3s ease;
+  background-color: $btn-color;
   border: 1px solid $btn-color;
+  a {
+    text-decoration: none;
+  }
 }
 
 .btn-gradient:hover {
-  background: linear-gradient($hover-btn-color, $hover-btn-color);
-  color: white;
+  background-color: $hover-btn-color;
+  transition: background-color 0.2s ease;
 }

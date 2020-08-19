@@ -14,11 +14,17 @@
   }
 }
 
-.global {
-  background-color: rgb(246, 247, 248);
-  margin: 40px 0;
+.main {
+  width: 600px;
 }
 
-.details {
+.global {
+  margin: 40px 0;
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+}
 
+.side {
+  background-color: white;
+  border-radius: 15px;
 }
