@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
 
-  resources :bookings, only: [:index]
+  resources :bookings, only: [:index, :destroy]
 
   get "search", to: "events#search"
 end
