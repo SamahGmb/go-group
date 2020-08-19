@@ -1,18 +1,5 @@
 import mapboxgl from 'mapbox-gl';
 
-const mapElement = document.getElementById('map');
-
-const buildMap = () => {
-    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-    return new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v10'
-    });
-};
-
-
-
-
 const addMarkerToMap = (map, marker) => {
     new mapboxgl.Marker({ color: "#FF1252"})
     .setLngLat([marker.lng, marker.lat])
@@ -26,16 +13,21 @@ const fitMapToMarker = (map, marker) => {
 };
 
 const initMapbox = () => {
+    const mapElement = document.getElementById('map');
+
     if (mapElement) {
-        const map = buildMap();
+        mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+        
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v10'
+        })
+        
         const marker = JSON.parse(mapElement.dataset.marker);
         
         addMarkerToMap(map, marker);
         fitMapToMarker(map, marker);
-
     }
 };
-
-
 
 export { initMapbox };

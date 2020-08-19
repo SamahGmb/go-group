@@ -73,7 +73,7 @@ event4 = Event.create!(
   end_date: Date.new(2020,8,26),
   details: "Nous sommes une bande de joyeux lurons qui souhaite passer deux nuits à la belle étoile
 dans un endroit tenu secret jusqu'à la date du RDV" ,
-  location: "Place de la Victoire33000 Bordeaux",
+  location: "Place de la Victoire 33000 Bordeaux",
   user_id: user1.id
 )
 file4 = URI.open('https://images.unsplash.com/photo-1532339142463-fd0a8979791a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')
