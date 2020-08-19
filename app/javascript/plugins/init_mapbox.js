@@ -28,7 +28,7 @@ const fitMapToMarker = (map, marker) => {
 const initMapbox = () => {
     if (mapElement) {
         const map = buildMap();
-        const marker = JSON.parse(mapElement.dataset.marker);~
+        const marker = JSON.parse(mapElement.dataset.marker);
         
         addMarkerToMap(map, marker);
         fitMapToMarker(map, marker);
