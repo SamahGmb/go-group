@@ -14,4 +14,9 @@ class EventsController < ApplicationController
       }
     @booking = Booking.new
   end
+
+  def search
+    @search = Event.find_by(title: params[:search])
+  end
+
 end
