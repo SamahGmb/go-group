@@ -11,7 +11,7 @@
     <h1><%= @event.title %></h1>
     
     <span class="organizer">
-      <%= cl_image_tag @event.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+      <%= cl_image_tag @event.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar-large" %>
       <p>Organisé par <br> <%= @event.user.username %></p>
     </span>
    </div>  
@@ -25,6 +25,16 @@
       <div class="details">
         <h2>Détails</h2>
         <p><%= @event.details %></p>
+      </div>
+
+      <div class="btn-middle">
+        <% if user_signed_in? %>
+          <%= simple_form_for [ @event, @booking ] do |f| %>
+            <%= f.submit "Participer !",  class: "btn-gradient" %>
+          <% end %>
+        <% else %>
+          <%= link_to "Log in ", new_user_session_path, class: "btn-gradient" %>
+        <% end %>
       </div>
     </div>
 
@@ -47,15 +57,8 @@
       </div>
       <img src="https://images.unsplash.com/photo-1585129891066-83969119de8c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=632&q=80" alt="">
     </div>
-
-    <div>
-      <% if user_signed_in? %>
-        <%= simple_form_for [ @event, @booking ] do |f| %>
-          <%= f.submit "Participer !",  class: "btn-gradient" %>
-        <% end %>
-      <% else %>
-        <%= link_to "Log in ", new_user_session_path, class: "btn-gradient" %>
-      <% end %>
+    <div class="simple-link">
+      <%= link_to "< Retour", root_path %>
     </div>
   </div>
 </div>

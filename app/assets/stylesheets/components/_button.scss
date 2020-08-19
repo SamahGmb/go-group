@@ -17,3 +17,19 @@
   transition: background-color 0.2s ease;
   text-decoration: none;
 }
+
+.btn-middle {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.simple-link {
+  margin-top: 50px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    color: $grey;
+  }
+}
