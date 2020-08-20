@@ -31,7 +31,6 @@
 <div class="wrapper">
   <h2 class="text-center">Trouvez votre activité!</h2>
   <div class="cards-wrapper">
-
     <% @events.each do |event| %>
       <div class="card">
         <%= link_to event_path(event) do %>
@@ -41,19 +40,19 @@
           <div class="card-info">
             <div class="date">
               <% if event.start_date == event.end_date %>
-                <p>Le <%= event.start_date.strftime("%d/%m/%G") %></p>
+                  <p>Le <%= event.start_date.strftime("%d/%m/%G") %></p>
               <% else %>
                 <p>Du <%= event.start_date.strftime("%d/%m/%G") %> au <%= event.end_date.strftime("%d/%m/%G") %></p>
-              <% end %>
+               <% end %>
             </div>
-            <h3 class="card-title no-link-deco"><%= event.title %></h3>
+          <h3 class="card-title no-link-deco"><%= event.title %></h3>
         <% end %>
-        <p class="card-location"><%= event.location %></p>
-        <span class="organizer">
-          <%= cl_image_tag event.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
-          <p>Organisé par <br> <%= event.user.username %></p>
-        </span>
-      </div>
+          <p class="card-location"><%= event.location %></p>
+          <span class="organizer">
+            <%= cl_image_tag event.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+            <p>Organisé par <br> <%= event.user.username %></p>
+          </span>
+        </div>
       </div>
     <% end %>
   </div>
