@@ -5,3 +5,11 @@
 .date {
   color: rgb(145, 142, 142);
 }
+
+.organizer {
+  display: flex;
+  p {
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+}
