@@ -30,15 +30,17 @@
             <%= cl_image_tag event.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
             <p>Organisé par <br> <%= event.user.username %></p>
           </span>
-          <div class="card-participants">
-          <% if event.bookings.empty? %>
-            <p>Pas encore de participants</p>
-          <% else %>
-            <p class='text-center'><strong>Participants</strong></p>
-            <% event.bookings.each do |booking| %>
-              <%= cl_image_tag booking.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+          <div>
+            <% if event.bookings.empty? %>
+              <p class="card-no-participant text-center">Pas encore de participants</p>
+            <% else %>
+              <div class="card-participants">
+                <p class='text-center'><strong>Participants</strong></p>
+                <% event.bookings.each do |booking| %>
+                  <%= cl_image_tag booking.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+                <% end %>
+              </div>            
             <% end %>
-          <% end %>
           </div>
           <span class="card-icons">
             <%= link_to edit_event_path(event), class: "left-icon" do %>

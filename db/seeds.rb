@@ -12,7 +12,7 @@ Booking.destroy_all
 Event.destroy_all
 User.destroy_all
 
-puts "creating 2 users ..."
+puts "creating users ..."
 
 user1 = User.create!(
   username: "Michel",
@@ -29,6 +29,47 @@ user2 = User.create!(
 )
 file_user2 = URI.open('https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1047&q=80')
 user2.photo.attach(io: file_user2, filename: 'julie.jpg', content_type: 'image/jpg')
+
+user3 = User.create!(
+  username: "Jessica",
+  email: "jessica@gmail.com",
+  password: "Jessica"
+)
+file_user3 = URI.open('https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
+user3.photo.attach(io: file_user3, filename: 'jessica.jpg', content_type: 'image/jpg')
+
+user4 = User.create!(
+  username: "Muhamad",
+  email: "muhamad@gmail.com",
+  password: "Muhamad"
+)
+file_user4 = URI.open('https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
+user4.photo.attach(io: file_user4, filename: 'muhamad.jpg', content_type: 'image/jpg')
+
+user5 = User.create!(
+  username: "Janko",
+  email: "janko@gmail.com",
+  password: "Jankoo"
+)
+file_user5 = URI.open('https://images.unsplash.com/photo-1485290334039-a3c69043e517?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
+user5.photo.attach(io: file_user5, filename: 'janko.jpg', content_type: 'image/jpg')
+
+user6 = User.create!(
+  username: "Noah",
+  email: "noah@gmail.com",
+  password: "Noahhh"
+)
+file_user6 = URI.open('https://images.unsplash.com/photo-1542488586-13e4ad0330a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=765&q=80')
+user6.photo.attach(io: file_user6, filename: 'noah.jpg', content_type: 'image/jpg')
+
+user7 = User.create!(
+  username: "Emilie",
+  email: "emilie@gmail.com",
+  password: "Emilie"
+)
+file_user7 = URI.open('https://images.unsplash.com/photo-1542488586-13e4ad0330a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=765&q=80')
+user7.photo.attach(io: file_user7, filename: 'emilie.jpg', content_type: 'image/jpg')
+
 
 puts "users created"
 
