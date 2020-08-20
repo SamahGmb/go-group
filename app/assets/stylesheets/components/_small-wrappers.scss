@@ -14,10 +14,11 @@
 .global {
   margin: 40px 0;
   display: grid;
-  grid-template-columns: 2.5fr 1fr;
+  grid-template-columns: 2fr 1.1fr;
 }
 
 .side {
   background-color: white;
   border-radius: 15px;
+  height: 708px;
 }
