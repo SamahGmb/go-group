@@ -3,9 +3,12 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query].present?
-      sql_query = "title ILIKE :query OR location ILIKE :query"
-      @events = Event.where(sql_query, query: "%#{params[:query]}%")
+    if params[:title].present?
+      sql_query_title = "title ILIKE :title"
+      @events = Event.where(sql_query_title, title: "%#{params[:title]}%")
+    elsif params[:location].present?
+      sql_query_location = "location ILIKE :location"
+      @events = Event.where(sql_query_location, location: "%#{params[:location]}%")
     else
       @events = Event.all
     end
