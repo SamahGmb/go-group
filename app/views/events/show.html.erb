@@ -1,4 +1,5 @@
-<div class="head-summary">
+ <div>
+ <div class="head-summary">
   <div class="wrapper">
     <div class="date">
       <% if @event.start_date == @event.end_date %>
@@ -55,8 +56,8 @@
           <p><%= @event.location %></p>
         </span>
       </div>
-      <div id="map"
-        style="width: 100%; height: 600px;"
+     <div id="map"
+        style="width: 100%; height: 600px"
         data-marker="<%= @marker.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
@@ -66,3 +67,4 @@
     <%= link_to "< Retour à Go-Group", root_path %>
   </div>
 </div>
+ </div>
