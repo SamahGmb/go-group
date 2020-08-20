@@ -9,12 +9,12 @@
     </div>
 
     <h1><%= @event.title %></h1>
-    
+
     <span class="organizer">
       <%= cl_image_tag @event.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar-large" %>
       <p>Organisé par <br> <%= @event.user.username %></p>
     </span>
-   </div>  
+   </div>
 </div>
 
 <div class="wrapper">
@@ -33,7 +33,7 @@
             <%= f.submit "Participer !",  class: "btn-gradient" %>
           <% end %>
         <% else %>
-          <%= link_to "Log in ", new_user_session_path, class: "btn-gradient" %>
+          <%= link_to "Se connecter", new_user_session_path, class: "btn-gradient" %>
         <% end %>
       </div>
     </div>
