@@ -20,6 +20,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @event.user = current_user
     @event.save
     redirect_to event_path(@event)
   end
@@ -34,14 +35,15 @@ class EventsController < ApplicationController
   end
 
   def my_events
-    @events = events.where(user: current_user)
+    @events = Event.where(user: current_user)
   end
 
   def edit
   end
 
   def update
-    @event = Event.update(event_params)
+    @event.update(event_params)
+    redirect_to event_path(@event)
   end
 
   def destroy
@@ -52,10 +54,11 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :start_date, :end_date, :location, :details, :photo)
+    params.require(:event).permit(:title, :start_date, :end_date, :location, :details, :photo, :user_id)
   end
 
   def set_event
     @event = Event.find(params[:id])
   end
+
 end
