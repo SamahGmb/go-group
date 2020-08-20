@@ -4,12 +4,25 @@
     <p>Bougez, Rencontrez</p>
     <div>
       <%= form_tag root_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Recherchez votre prochain événement"
-        %>
-        <%= submit_tag "Rechercher", class: "btn-gradient" %>
+        <div class="form-row">
+          <div class="col-8">
+            <%= text_field_tag :title,
+              params[:title],
+              class: "form-control form-control-lg",
+              placeholder: "Recherchez votre prochain événement"
+            %>
+          </div>
+          <div class="col">
+            <%= text_field_tag :location,
+              params[:location],
+              class: "form-control form-control-lg",
+              placeholder: "Choisissez une ville"
+            %>
+          </div>
+        </div>
+        <div class="form-row">
+          <%= submit_tag "Rechercher", class: "btn-gradient" %>
+        </div>
       <% end %>
     </div>
   </div>
@@ -46,7 +59,7 @@
   </div>
 
   <div class="row d-flex justify-content-center mt-5 mb-5">
-    <%= link_to "Créer mon événement !", "#", class: "btn btn-gradient" %>
+    <%= link_to "Créer mon événement !", new_event_path, class: "btn-gradient" %>
   </div>
 
 </div>

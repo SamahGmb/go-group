@@ -37,12 +37,12 @@ event1 = Event.create!(
   title: "Sortie pêche",
   start_date: Date.new(2020,8,20),
   end_date: Date.new(2020,8,20),
-  details: "Embarquez avec Leucate Evasion Marine à bord de l’Azur, Cap au nord avec le Capitaine “Baptiste”, 
-  vers la plage sauvage des Coussoules et La Franqui ! De Port-Leucate jusqu’à La Franqui, 4ème plus belle plage de France. 
+  details: "Embarquez avec Leucate Evasion Marine à bord de l’Azur, Cap au nord avec le Capitaine “Baptiste”,
+  vers la plage sauvage des Coussoules et La Franqui ! De Port-Leucate jusqu’à La Franqui, 4ème plus belle plage de France.
   Embarquez à bord de notre vedette rapide ” la Catalane ” avec seulement 12 personnes à bord ! Partez à la rencontre des grands
-   mammifères marins de Méditerranée. Ou préférez découvrir notre apéro fait d’huîtres, charcuterie et vin du Pays. 
-   Offrez-vous des moments de convivialité et de détente en mer et au coucher de soleil ! Leucate Evasion Marine vous propose des 
-   apéros en mer sur un bateau avec 80 pers, du live, des Dj’s, des tapas, du vin et de la bonne humeur. Optez pour une sardinade 
+   mammifères marins de Méditerranée. Ou préférez découvrir notre apéro fait d’huîtres, charcuterie et vin du Pays.
+   Offrez-vous des moments de convivialité et de détente en mer et au coucher de soleil ! Leucate Evasion Marine vous propose des
+   apéros en mer sur un bateau avec 80 pers, du live, des Dj’s, des tapas, du vin et de la bonne humeur. Optez pour une sardinade
    et baignade dans l’Anse du Paradis. Ou préférez un balade au soleil couchant sur les Corbières. Selon la saison, nous vous proposons
   également d’admirer le feux d’artifice depuis la mer : une expérience unique.",
   location: "40460 Sanguinet",
@@ -58,9 +58,9 @@ event2 = Event.create!(
   details: "Le volant est un projectile aux propriétés aérodynamiques uniques qui lui donnent une trajectoire très différente des balles utilisées dans la plupart des sports de raquette. En particulier, les plumes créent une traînée bien plus importante, causant une décélération plus rapide. Le vent ayant beaucoup d'influence sur cette trajectoire, car la masse d'un volant est généralement d'environ 5 grammes, le badminton est toujours pratiqué en intérieur.
 
   Depuis 1992, le badminton est un sport olympique qui se décline en 5 disciplines : simple hommes, simple dames, double hommes, double dames et double mixte.
-  
+
   À haut niveau, il nécessite une excellente condition physique ainsi que de très bonnes qualités techniques et tactiques.
-  
+
   C'est le sport de raquette le plus rapide du monde1, il est fréquent de voir une douzaine d'échanges en double en moins de 10 secondes. Le record de vitesse pour un volant en compétition est détenu depuis le 11 janvier 2017 par Mads Pieler Kolding, joueur danois de double hommes, qui a frappé le volant à la vitesse de 426 km/h2. Le Malaisien Tan Boon Heong, également joueur de double hommes, a, pour sa part, propulsé un volant à 493 km/h en sortie de raquette en conditions optimales, établissant ainsi le record Guinness actuel, battant ainsi l'ancien record de 421 km/h qu'il avait également établi3. ",
   location: "36 Rue Élie Gintrac, 33000 Bordeaux",
   user_id: user1.id
@@ -117,5 +117,15 @@ event6 = Event.create!(
 file6 = URI.open('https://images.unsplash.com/photo-1525267219888-bb077b8792cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')
 event6.photo.attach(io: file6, filename: 'camping.jpg', content_type: 'image/jpg')
 
+event7 = Event.create!(
+  title: "Réunion d'information : Portage salarial",
+  start_date: Date.new(2020,9,20),
+  end_date: Date.new(2020,9,20),
+  details: "Le portage salarial permet d’entreprendre, de lancer ou tester son activité tout en bénéficiant du statut de salarié, de son statut social protecteur et de services d’accompagnement. La gestion administrative de votre activité est déléguée à la société de portage salarial. Ainsi, vous vous consacrez pleinement à votre métier. Ce dispositif propose de nouvelles perspectives dans l’organisation et la relation au travail et répond au besoin actuel de flexibilité et de sécurité. Au programme : Qu’est-ce que le portage salarial ? À qui s’adresse le portage salarial ? Comment Talorig m’accompagne dans mon projet : accompagnement personnalisé et gestion administrative ? Quelle rémunération vais-je percevoir ? Pour quelles missions ? Ces réunions sont ouvertes à tout public et quelle que soit votre situation (en réflexion sur sa démarche, à l’écoute d’opportunité, ou prêt à se lancer). Pour vous inscrire cliquez sur lien suivant : https://event.webinarjam.com/register/25/84l7qunn." ,
+  location: "Place de jaude, 63000 Clermont-Ferrand",
+  user_id: user1.id
+)
+file7 = URI.open('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80')
+event7.photo.attach(io: file7, filename: 'reunion.jpg', content_type: 'image/jpg')
 
 puts "Events created"
