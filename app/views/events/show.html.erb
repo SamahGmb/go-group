@@ -2,9 +2,9 @@
   <div class="wrapper">
     <div class="date">
       <% if @event.start_date == @event.end_date %>
-        <p>Le <%= @event.start_date %></p>
+        <p>Le <%= @event.start_date.strftime("%d/%m/%G") %></p>
       <% else %>
-        <p>Du <%= @event.start_date %> au <%= @event.end_date %></p>
+        <p>Du <%= @event.start_date.strftime("%d/%m/%G")%> au <%= @event.end_date.strftime("%d/%m/%G")%></p>
       <% end %>
     </div>
 
@@ -44,9 +44,9 @@
           <i class="far fa-clock"></i>
           <p>
             <% if @event.start_date == @event.end_date %>
-              Le <%= @event.start_date %>
+              Le <%= @event.start_date.strftime("%d/%m/%G") %>
             <% else %>
-              Du <%= @event.start_date %> au <%= @event.end_date %>
+              Du <%= @event.start_date.strftime("%d/%m/%G") %> au <%= @event.end_date.strftime("%d/%m/%G") %>
             <% end %>
           </p>
         </span>

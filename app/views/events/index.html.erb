@@ -41,9 +41,9 @@
           <div class="card-info">
             <div class="date">
               <% if event.start_date == event.end_date %>
-                <p>Le <%= event.start_date %></p>
+                <p>Le <%= event.start_date.strftime("%d/%m/%G") %></p>
               <% else %>
-                <p>Du <%= event.start_date %> au <%= event.end_date %></p>
+                <p>Du <%= event.start_date.strftime("%d/%m/%G") %> au <%= event.end_date.strftime("%d/%m/%G") %></p>
               <% end %>
             </div>
             <h3 class="card-title no-link-deco"><%= event.title %></h3>
