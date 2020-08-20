@@ -31,7 +31,7 @@
             <%= cl_image_tag booking.event.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
             <p>Organisé par <br> <%= booking.event.user.username %></p>
           </span>
-          <span class="garbage">
+          <span class="card-icons">
             <%= link_to booking_path(booking), method: :delete, data: { confirm: "êtes-vous sûr de supprimer cette réservation ?" } do %>
               <i class="far fa-trash-alt"></i>
             <% end %>
