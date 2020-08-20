@@ -19,5 +19,4 @@ class EventsController < ApplicationController
       }
     @booking = Booking.new
   end
-
 end

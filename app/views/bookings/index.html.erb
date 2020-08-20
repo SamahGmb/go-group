@@ -19,9 +19,9 @@
         <div class="card-info">
           <div class="date">
             <% if booking.event.start_date == booking.event.end_date %>
-              <p>Le <%= booking.event.start_date %></p>
+              <p>Le <%= booking.event.start_date.strftime("%d/%m/%G") %></p>
             <% else %>
-              <p>Du <%= booking.event.start_date %> au <%= booking.event.end_date %></p>
+              <p>Du <%= booking.event.start_date.strftime("%d/%m/%G") %> au <%= booking.event.end_date.strftime("%d/%m/%G") %></p>
             <% end %>
           </div>
           <h3 class="card-title no-link-deco"><%= booking.event.title %></h3>
