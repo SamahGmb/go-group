@@ -4,7 +4,7 @@
 
   <% if @events.empty? %>
     <div class="card-nothing">
-      <p>Vous n'avez aucune activité d'enregistrée</p>
+      <p>Vous n'avez aucun événement d'organisé</p>
     </div>
   <% end %>
 
@@ -30,8 +30,18 @@
             <%= cl_image_tag event.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
             <p>Organisé par <br> <%= event.user.username %></p>
           </span>
-          <span class="garbage">
-            <%= link_to edit_event_path(event) do %>
+          <div class="card-participants">
+          <% if event.bookings.empty? %>
+            <p>Pas encore de participants</p>
+          <% else %>
+            <p class='text-center'><strong>Participants</strong></p>
+            <% event.bookings.each do |booking| %>
+              <%= cl_image_tag booking.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+            <% end %>
+          <% end %>
+          </div>
+          <span class="card-icons">
+            <%= link_to edit_event_path(event), class: "left-icon" do %>
               <i class="fas fa-pencil-alt"></i>
             <% end %>
             <%= link_to event_path(event), method: :delete, data: { confirm: "ëtes-vous sûr de supprimer cette activité ?" } do %>
