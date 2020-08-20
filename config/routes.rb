@@ -5,8 +5,5 @@ Rails.application.routes.draw do
   resources :events, only: [:show] do
     resources :bookings, only: [:create]
   end
-
-  resources :bookings, only: [:index]
-
-  get "search", to: "events#search"
+  resources :bookings, only: [:index, :destroy]
 end

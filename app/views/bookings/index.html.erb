@@ -1,7 +1,13 @@
 
 <div class="wrapper">
 
-  <h1 class="text-center m-3"><%="Vos événements"%></h1>
+  <h1 class="text-center m-3"><%="Je participe à"%></h1>
+
+  <% if @bookings.empty? %>
+    <div class="card-nothing">
+      <p>Vous n'avez aucune activité d'enregistrée</p>
+    </div>
+  <% end %>
 
   <div class="cards-wrapper">
     <% @bookings.each do |booking| %>
@@ -25,13 +31,18 @@
             <%= cl_image_tag booking.event.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
             <p>Organisé par <br> <%= booking.event.user.username %></p>
           </span>
+          <span class="garbage">
+            <%= link_to booking_path(booking), method: :delete, data: { confirm: "ëtes-vous sûr de supprimer cette réservation ?" } do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          </span>
         </div>
       </div>
     <% end %>
   </div>
-      <div class="simple-link">
-      <%= link_to "< Retour à Go-Group", root_path %>
-    </div>
+  <div class="simple-link ">
+    <%= link_to "< Retour à Go-Group", root_path %>
+  </div>
 </div>
 
 
