@@ -1,0 +1,11 @@
+.garbage {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  i {
+    color: $grey;
+    &:hover {
+      color: black;
+    }
+  }
+}
