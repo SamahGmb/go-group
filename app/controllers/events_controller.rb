@@ -2,7 +2,12 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @events = Event.all
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR location ILIKE :query"
+      @events = Event.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @events = Event.all
+    end
   end
 
   def show
@@ -13,10 +18,6 @@ class EventsController < ApplicationController
         lng: @event.longitude
       }
     @booking = Booking.new
-  end
-
-  def search
-    @search = Event.find_by(title: params[:search])
   end
 
 end

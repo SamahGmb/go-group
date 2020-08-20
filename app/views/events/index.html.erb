@@ -3,9 +3,13 @@
     <h1>Go Group</h1>
     <p>Bougez, Rencontrez</p>
     <div>
-      <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
-        <%= f.input :title, label: false, placeholder: 'Trouver votre prochain événement' %>
-        <%= f.submit "Rechercher", class: "btn-gradient" %>
+      <%= form_tag root_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Recherchez votre prochain événement"
+        %>
+        <%= submit_tag "Rechercher", class: "btn-gradient" %>
       <% end %>
     </div>
   </div>
@@ -36,7 +40,7 @@
           <%= cl_image_tag event.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
           <p>Organisé par <br> <%= event.user.username %></p>
         </span>
-      </div>         
+      </div>
       </div>
     <% end %>
   </div>

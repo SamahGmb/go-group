@@ -7,6 +7,4 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:index]
-
-  get "search", to: "events#search"
 end
