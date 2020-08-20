@@ -32,9 +32,8 @@
             <p>Organisé par <br> <%= booking.event.user.username %></p>
           </span>
           <span class="garbage">
-            <%= link_to booking_path(booking), method: :delete, data: { confirm: "êtes-vous sûr de supprimer cette réservation ?" } do %>
-              <i class="far fa-trash-alt"></i>
-            <% end %>
+            <i class="far fa-trash-alt" id="sweet-alert-demo"></i>
+            <%= link_to "", booking_path(booking), method: :delete, id: "delete-link" %>
           </span>
         </div>
       </div>
