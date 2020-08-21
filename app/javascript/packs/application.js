@@ -33,19 +33,20 @@ import { initflatpickr } from "../plugins/flatpickr";
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initflatpickr();
+  initSweetalert();
 });
 
-// initSweetalert('#sweet-alert-demo', {
-//   title: "Voulez-vous vraiment supprimer?",
-//   text: "Cette action est irréversible",
-//   icon: "warning",
-//   buttons: [
-//     'Non',
-//     'Oui'
-//   ],
-// }, (value) => {
-//   if (value) {
-//     const link = document.querySelector('#delete-link');
-//     link.click();
-//   }
-// });
+initSweetalert('#sweet-alert-demo', {
+  title: "Voulez-vous vraiment supprimer?",
+  text: "Cette action est irréversible",
+  icon: "warning",
+  buttons: [
+    'Non',
+    'Oui'
+  ],
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
+});
