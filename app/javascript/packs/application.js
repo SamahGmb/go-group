@@ -26,24 +26,26 @@ require("channels")
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initSweetalert } from '../plugins/init_sweetalert';
-import "../plugins/flatpickr"
+import { initflatpickr } from "../plugins/flatpickr";
+
 
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initflatpickr();
 });
 
-initSweetalert('#sweet-alert-demo', {
-  title: "Voulez-vous vraiment supprimer?",
-  text: "Cette action est irréversible",
-  icon: "warning",
-  buttons: [
-    'Non',
-    'Oui'
-  ],
-}, (value) => {
-  if (value) {
-    const link = document.querySelector('#delete-link');
-    link.click();
-  }
-});
+// initSweetalert('#sweet-alert-demo', {
+//   title: "Voulez-vous vraiment supprimer?",
+//   text: "Cette action est irréversible",
+//   icon: "warning",
+//   buttons: [
+//     'Non',
+//     'Oui'
+//   ],
+// }, (value) => {
+//   if (value) {
+//     const link = document.querySelector('#delete-link');
+//     link.click();
+//   }
+// });
