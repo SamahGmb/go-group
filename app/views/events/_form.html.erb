@@ -2,10 +2,14 @@
     <%= simple_form_for @event do |f| %>
       <%= f.input :title, label: "Titre" %>
       <%= f.input :location, label: "Adresse" %>
-      <%= f.input :start_date, as: :date, label: "Date de début" %>
-      <%= f.input :end_date, as: :date, label: "Date de fin" %>
+      <%= f.input :start_date, as: :string, label: "Date de début", required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :end_date, as: :string, label: "Date de fin", required: false, input_html: {class: "datepicker"} %>
       <%= f.input :details, label: "Détails de l'événement" %>
       <%= f.input :photo, as: :file, label: "Ajoutez une photo à l'événement" %>
       <%= f.submit "Publier mon événement", class: "btn-gradient"%>
     <% end %>
   </div>
+
+
+
+
