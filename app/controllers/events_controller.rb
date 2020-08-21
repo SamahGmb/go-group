@@ -9,6 +9,8 @@ class EventsController < ApplicationController
     elsif params[:location].present?
       sql_query_location = "location ILIKE :location"
       @events = Event.where(sql_query_location, location: "%#{params[:location]}%")
+    elsif params[:start_date].present?
+      @events = Event.where(start_date: params[:start_date])
     else
       @events = Event.all
     end
