@@ -6,8 +6,8 @@
     </div>
     <div>
       <%= form_tag root_path, method: :get do %>
-        <div class="form-row mb-0">
-          <div class="col-8">
+        <div class="form-row">
+          <div class="col-7">
             <%= text_field_tag :title,
               params[:title],
               class: "form-control form-control-lg",
@@ -19,6 +19,13 @@
               params[:location],
               class: "form-control form-control-lg",
               placeholder: "Choisissez une ville"
+            %>
+          </div>
+          <div class="col">
+            <%= text_field_tag :start_date,
+              params[:start_date],
+              class: "datepicker",
+              placeholder: "Sélectionnez une Date"
             %>
           </div>
         </div>
@@ -66,5 +73,7 @@
   </div>
 
 </div>
+
+
 
 
