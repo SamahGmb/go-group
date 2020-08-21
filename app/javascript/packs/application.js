@@ -32,12 +32,12 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 initSweetalert('#sweet-alert-demo', {
-  title: "Are you sure?",
-  text: "This action cannot be reversed",
+  title: "Voulez-vous vraiment supprimer?",
+  text: "Cette action est irréversible",
   icon: "warning",
   buttons: [
-    'No, cancel it!',
-    'Yes, I am sure!'
+    'Non',
+    'Oui'
   ],
 }, (value) => {
   if (value) {
