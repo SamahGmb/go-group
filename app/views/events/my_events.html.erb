@@ -1,12 +1,14 @@
 <div class="wrapper">
 
-  <h1 class="text-center m-3"><%="J'ai organisé"%></h1>
+  <h1 class="text-center m-3"><%="J'organise"%></h1>
 
   <% if @events.empty? %>
     <div class="card-nothing">
-      <p>Vous n'avez aucun événement d'organisé</p>
+      <div class="row d-flex justify-content-center mt-5 mb-5">
+        <%= link_to "Créer mon événement !", new_event_path, class: "btn-gradient" %>
+      </div>
     </div>
-  <% end %>
+  <% else %>
 
   <div class="cards-wrapper">
     <% @events.each do |event| %>
@@ -34,8 +36,8 @@
             <% if event.bookings.empty? %>
               <p class="card-no-participant text-center">Pas encore de participants</p>
             <% else %>
+              <p class='text-center participants-title'><strong>Participants</strong></p>
               <div class="card-participants">
-                <p class='text-center'><strong>Participants</strong></p>
                 <% event.bookings.each do |booking| %>
                   <%= cl_image_tag booking.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
                 <% end %>
@@ -53,7 +55,12 @@
         </div>
       </div>
     <% end %>
+
   </div>
+      <div class="row d-flex justify-content-center mt-5 mb-5">
+      <%= link_to "Créer un autre événement !", new_event_path, class: "btn-gradient" %>
+    </div>
+     <% end %>
   <div class="simple-link ">
     <%= link_to "< Retour à Go-Group", root_path %>
   </div>

@@ -8,8 +8,14 @@
 
 .organizer {
   display: flex;
+  align-items: center;
+  margin-bottom: 5px;
   p {
     margin-left: 10px;
-    margin-bottom: 0;
   }
+}
+
+.show-participants h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
