@@ -6,10 +6,19 @@
   color: rgb(145, 142, 142);
 }
 
+.head-summary {
+  .organizer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    p {
+      margin-left: 10px;
+    }
+  }
+}
+
 .organizer {
   display: flex;
-  align-items: center;
-  margin-bottom: 5px;
   p {
     margin-left: 10px;
   }
