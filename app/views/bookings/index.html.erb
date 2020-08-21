@@ -35,8 +35,8 @@
             <% if booking.event.bookings.empty? %>
               <p class="card-no-participant text-center">Pas encore de participants</p>
             <% else %>
-              <div class="card-participants">
-                <p class='text-center'><strong>Participants</strong></p>
+              <p class='text-center participants-title'><strong>Participants</strong></p>
+              <div class="card-participants"> 
                 <% booking.event.bookings.each do |booking| %>
                   <%= cl_image_tag booking.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
                 <% end %>
