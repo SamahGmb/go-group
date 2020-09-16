@@ -138,7 +138,7 @@ event3 = Event.create!(
   end_date: Date.new(2020,8,24),
   details: "Que vous soyez débutant ou passionné de cuisine, une bande de copines désirant faire une activité originale, maman à la recherche d’une occupation ludique pour ses enfants …ou tout simplement quelqu’un de motivé pour changer ses habitudes alimentaires, ces cours de cuisine à domicile s’adressent à vous.
   Cette formule de cours à domicile vous permets d’organiser en toute tranquillité et décontraction chez vous, un atelier de cuisine sur mesure, selon vos désirs et vos besoins. L’assurance de passer un bon moment de partage, de rire et de convivialité en famille ou entre amis, puis de déguster ensemble vos propres réalisations tout en restant dans le cadre intimiste de votre maison." ,
-  location: "86 Rue Leyteire 33000 Bordeaux",
+  location: "86 Rue Leyteire, 33000 Bordeaux",
   user_id: user3.id
 )
 file3 = URI.open('https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80')
@@ -151,7 +151,7 @@ event4 = Event.create!(
   end_date: Date.new(2020,8,26),
   details: "Nous sommes une bande de joyeux lurons qui souhaite passer deux nuits à la belle étoile
 dans un endroit tenu secret jusqu'à la date du RDV. Le camping sauvage est une forme de camping pratiqué en pleine nature, dans un lieu qui n'est pas (ou peu) aménagé pour cette activité. Suivant les législations, il peut être interdit, autorisé, ou limité au bivouac (camping sauvage d'une nuit, du coucher au lever du soleil)." ,
-  location: "Place de la Victoire 33000 Bordeaux",
+  location: "col de Tramassel, 65400 Beaucens",
   user_id: user4.id
 )
 file4 = URI.open('https://images.unsplash.com/photo-1532339142463-fd0a8979791a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')
@@ -164,7 +164,7 @@ event5 = Event.create!(
   end_date: Date.new(2020,8,31),
   details: "Réunissons nous pour des plaisirs charnels. Port de Vêtements interdits, masque autorisé
 chez Gérard. Voulez-vous vous sentir plus pendant les rapports sexuels? Souhaitez-vous approfondir votre connexion avec votre amoureux et pouvoir améliorer votre vie intime avec le temps? Dans cet atelier en ligne, vous découvrirez un nouveau monde de jeu et d'exploration. Nous vous guiderons pour plonger dans l'inconnu, apprendre à faire confiance à votre corps et au flux qui existe entre vous et votre partenaire. Vous offrir une expérience de connexion profonde, d'intimité très sensationnelle et épanouissante. Les pratiques et principes que nous vous enseignons s'appliquent à toute forme de relation, que vous soyez physiquement ensemble ou éloignés l'un de l'autre. De plus, vous n’avez pas besoin d’être dans une relation intime pour bénéficier des pratiques que nous enseignons." ,
-  location: "Chartrons 33300 Bordeaux",
+  location: "Chartrons, 33300 Bordeaux",
   user_id: user5.id
 )
 file5 = URI.open('https://images.unsplash.com/photo-1566400809458-66304c073b36?ixlib=rb-1.2.1&auto=format&fit=crop&w=1049&q=80')
@@ -182,7 +182,7 @@ file6 = URI.open('https://images.unsplash.com/photo-1525267219888-bb077b8792cc?i
 event6.photo.attach(io: file6, filename: 'camping.jpg', content_type: 'image/jpg')
 
 event7 = Event.create!(
-  title: "Réunion d'information : Portage salarial",
+  title: "Réunion sur le salariat",
   start_date: Date.new(2020,9,20),
   end_date: Date.new(2020,9,20),
   details: "Le portage salarial permet d’entreprendre, de lancer ou tester son activité tout en bénéficiant du statut de salarié, de son statut social protecteur et de services d’accompagnement. La gestion administrative de votre activité est déléguée à la société de portage salarial. Ainsi, vous vous consacrez pleinement à votre métier. Ce dispositif propose de nouvelles perspectives dans l’organisation et la relation au travail et répond au besoin actuel de flexibilité et de sécurité. Au programme : Qu’est-ce que le portage salarial ? À qui s’adresse le portage salarial ? Comment Talorig m’accompagne dans mon projet : accompagnement personnalisé et gestion administrative ? Quelle rémunération vais-je percevoir ? Pour quelles missions ? Ces réunions sont ouvertes à tout public et quelle que soit votre situation (en réflexion sur sa démarche, à l’écoute d’opportunité, ou prêt à se lancer). Pour vous inscrire cliquez sur lien suivant : https://event.webinarjam.com/register/25/84l7qunn." ,
@@ -210,7 +210,7 @@ event9 = Event.create!(
   start_date: Date.new(2020,8,21),
   end_date: Date.new(2020,8,21),
   details: "Venez faire du bowling avec nous",
-  location: "Terrasse Front du Médoc, 33000 Bordeaux",
+  location: "Terrasse Front du Médoc, Bordeaux",
   user_id: user3.id
 )
 file9 = URI.open('https://images.unsplash.com/photo-1545056453-f0359c3df6db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')
@@ -222,7 +222,7 @@ event10 = Event.create!(
   end_date: Date.new(2020,8,22),
   details: "Commençons par les basiques ! L’escalade sportive se pratique à l’extérieur mais aussi en salle. À moins d’être assuré par un enrouleur automatique comme en escalade de vitesse, il faut être en binôme : un grimpeur et un assureur. La paroi à gravir est toujours équipée d’éléments d’assurage et est à parcourir d’un coup. Une fois arrivé en haut, on atteint un relais : c’est un double anneau métallique qui permet d’attacher la corde en rappel et de redescendre en toute tranquillité.
   Cette discipline se dispute aux Jeux Olympiques sous le nom d’escalade de « difficulté ». Le grimpeur progresse sur un mur d’environ 15 mètres en s’assurant en tête. Son objectif ? Aller le plus haut possible !",
-  location: "Terrasse Front du Médoc, 33000 Bordeaux",
+  location: "170 cours du Médoc, Bordeaux",
   user_id: user4.id
 )
 file10 = URI.open('https://images.unsplash.com/photo-1564769662533-4f00a87b4056?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1114&q=80')
