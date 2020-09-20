@@ -10,18 +10,43 @@
   }
 }
 
-.main {
-  width: 600px;
-}
-
 .global {
   margin: 40px 0;
-  display: grid;
-  grid-template-columns: 2fr 1.1fr;
+  display: flex;
+  justify-content: space-around;
+}
+
+.main {
+  flex-grow: 1;
+  width: 70%;
+  padding: 0 40px;
 }
 
 .side {
   background-color: white;
   border-radius: 15px;
-  height: 708px;
+  height: 80vh;
+  width: 30%;
+}
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .side {
+    display: none;
+  }
+}
+
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .main {
+    padding: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  /* For a screen < 960px, this CSS will be read */
+  .main-img {
+    display: none;
+  }
 }

@@ -12,3 +12,11 @@
   width: 40px;
 }
 
+.dropdown-item {
+  &:hover {
+    background-color: $btn-color;
+    color:white;
+    font-weight: bold;
+  }
+}
+
