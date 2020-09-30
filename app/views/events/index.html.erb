@@ -47,7 +47,9 @@
       <div class="card">
         <%= link_to event_path(event) do %>
           <div class="card-img" >
-            <%= cl_image_tag event.photo.key, height: 200 , width: 300 %>
+            <% if event.photo.attached? %>
+              <%= cl_image_tag event.photo.key, height: 200 , width: 300 %>
+            <% end %>
           </div>
           <div class="card-info">
             <div class="date">
