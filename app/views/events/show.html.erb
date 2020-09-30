@@ -27,7 +27,9 @@
   <div class="global">
     <div class="main">
       <div class="main-img">
-        <%= cl_image_tag @event.photo.key, height: 400, width: 600 %>
+        <% if @event.photo.attached? %>
+          <%= cl_image_tag @event.photo.key, height: 400, width: 600 %>
+        <% end %>
       </div>
       <div class="details">
         <h2>Détails</h2>
@@ -37,7 +39,11 @@
         <h2>Participants</h2>
         <div>
           <% @event.bookings.each do |booking| %>
-            <%= cl_image_tag booking.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+            <% if booking.user.photo.attached? %>
+              <%= cl_image_tag booking.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+            <% else %>
+              <%= image_tag ('avatar.png'), height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+            <% end %>
           <% end %>
         </div>
       </div>
