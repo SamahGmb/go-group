@@ -31,7 +31,11 @@
           <% end %>
           <p class="card-location"><%= event.location %></p>
           <span class="organizer">
-            <%= cl_image_tag event.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+            <% if event.user.photo.attached? %>
+              <%= cl_image_tag event.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+            <% else %>
+              <%= image_tag ('avatar.png'), height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+            <% end %>
             <p>Organisé par <br> <%= event.user.username %></p>
           </span>
           <div>
