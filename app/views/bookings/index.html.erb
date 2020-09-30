@@ -40,7 +40,11 @@
               <p class='text-center participants-title'><strong>Participants</strong></p>
               <div class="card-participants">
                 <% booking.event.bookings.each do |booking| %>
-                  <%= cl_image_tag booking.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+                  <% if booking.user.photo.attached? %>
+                    <%= cl_image_tag booking.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+                  <% else %>
+                    <%= image_tag ('avatar.png'), eight: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+                  <% end %>
                 <% end %>
               </div>
             <% end %>
