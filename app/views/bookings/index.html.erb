@@ -14,7 +14,9 @@
       <div class="card">
       <%= link_to event_path(booking.event) do %>
         <div class="card-img" >
-          <%= cl_image_tag booking.event.photo.key, height: 200, width: 300%>
+          <% if booking.event.photo.attached? %>
+            <%= cl_image_tag booking.event.photo.key, height: 200, width: 300%>
+          <% end %>
         </div>
         <div class="card-info">
           <div class="date">
@@ -36,11 +38,11 @@
               <p class="card-no-participant text-center">Pas encore de participants</p>
             <% else %>
               <p class='text-center participants-title'><strong>Participants</strong></p>
-              <div class="card-participants"> 
+              <div class="card-participants">
                 <% booking.event.bookings.each do |booking| %>
                   <%= cl_image_tag booking.user.photo.key, height: 50, width: 50, crop: :thumb, gravity: :face, class: "avatar" %>
                 <% end %>
-              </div>            
+              </div>
             <% end %>
           </div>
           <span class="card-icons">
