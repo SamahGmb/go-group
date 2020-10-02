@@ -5,8 +5,10 @@
   <% if @events.empty? %>
     <div class="card-nothing">
       <div class="row d-flex justify-content-center mt-5 mb-5">
-        <%= link_to "Créer mon événement !", new_event_path, class: "btn-gradient" %>
+        <div class="col-12">
+          <%= link_to "Créer mon événement !", new_event_path, class: "btn-gradient" %>
       </div>
+        </div>
     </div>
   <% else %>
 
