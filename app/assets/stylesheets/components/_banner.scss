@@ -4,12 +4,19 @@
   padding: 100px 0 70px 0;
   background-image: asset-url('banner.jpg');
   opacity: 0.9;
-  height: 75vh;
+  height: 95vh;
   .wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
+    height: 95vh;
+  }
+}
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .banner {
+    background-image: asset-url('banner-mobile.png');
   }
 }
 
