@@ -1,0 +1,5 @@
+meta_product_name: "Go Group"
+meta_title: "Go Group | Sortez, Bougez, Rencontrez!"
+meta_description: "Web App destinée à : Trouver des activités près de vous, Créer et Publier des événements, Participer à des événemnts"
+meta_image: "og-go-group.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
