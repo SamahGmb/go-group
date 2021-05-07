@@ -14,7 +14,7 @@
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 576px) {
   /* For a screen < 540px, this CSS will be read */
   .banner {
     background-image: asset-url('banner-mobile.png');
